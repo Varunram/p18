@@ -46,6 +46,10 @@ app.get('/design', function(req, res) {
   res.render('design');
 });
 
+app.get('/waterrocket', function(req, res) {
+  res.render('waterrocket');
+});
+
 // Workshops
 app.get('/ansys', function(req, res) {
   res.render('ansys');
@@ -61,17 +65,6 @@ app.get('/icengines', function(req, res) {
 
 app.get('/rworkshop', function(req, res) {
   res.render('rworkshop');
-});
-
-
-app.get('/pgredirect', function(req, res) {
-  res.render('pgredirect.ejs');
-});
-
-app.get('/testtxn', function(req, res) {
-  res.render('testtxn.ejs', {
-    'config': config
-  });
 });
 
 // catch 404 and forward to error handler
