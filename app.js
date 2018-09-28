@@ -29,9 +29,40 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.get('/events', function(req, res) {
-  res.render('events');
+// Events
+app.get('/casestudy', function(req, res) {
+  res.render('casestudy');
 });
+
+app.get('/mcchallenge', function(req, res) {
+  res.render('mcchallenge');
+});
+
+app.get('/onlinetest', function(req, res) {
+  res.render('onlinetest');
+});
+
+app.get('/design', function(req, res) {
+  res.render('design');
+});
+
+// Workshops
+app.get('/ansys', function(req, res) {
+  res.render('ansys');
+});
+
+app.get('/creo', function(req, res) {
+  res.render('creo');
+});
+
+app.get('/icengines', function(req, res) {
+  res.render('icengines');
+});
+
+app.get('/rworkshop', function(req, res) {
+  res.render('rworkshop');
+});
+
 
 app.get('/pgredirect', function(req, res) {
   res.render('pgredirect.ejs');
@@ -42,59 +73,6 @@ app.get('/testtxn', function(req, res) {
     'config': config
   });
 });
-
-app.post('/testtxn', function(req, res) {
-
-  if (config.PAYTM_ENVIRONMENT == 'TEST') {
-    PAYTM_FINAL_URL = 'https://securegw-stage.paytm.in/theia/processTransaction';
-  } else {
-    PAYTM_FINAL_URL = 'https://securegw.paytm.in/theia/processTransaction';
-  }
-
-  var paramlist = req.body;
-  var paramarray = new Array();
-  for (name in paramlist) {
-    paramarray[name] = paramlist[name];
-  }
-  paramarray['PAYTM_STAG_URL'] = 'https://pguat.paytm.com';
-  paramarray['PAYTM_PROD_URL'] = 'https://secure.paytm.in';
-  paramarray['MID'] = 'Prodig41061704221412';
-  paramarray['PAYTM_ENVIRONMENT'] = 'TEST'; // PROD FOR PRODUCTION
-  paramarray['PAYTM_MERCHANT_KEY'] = '1Q&WSwIn8C2eGTSk';
-  paramarray['WEBSITE'] = 'prodigy.nitt.edu';
-  paramarray['CHANNEL_ID'] = 'WEB';
-  paramarray['INDUSTRY_TYPE_ID'] = 'Retail';
-  paramarray['PAYTM_FINAL_URL'] = 'https://securegw.paytm.in/theia/processTransaction';
-
-  var PAYTM_MERCHANT_KEY = config.PAYTM_MERCHANT_KEY;
-  paramarray['CALLBACK_URL'] = 'http://localhost:3000/response'; // in case if you want to send callback
-  checksum.genchecksum(paramarray, PAYTM_MERCHANT_KEY, function(err, result) {
-    res.render('pgredirect.ejs', {
-      'restdata': result
-    });
-  });
-});
-
-app.post('/response', function(req, res) {
-  console.log("in response post");
-  var paramlist = req.body;
-  var paramarray = new Array();
-  console.log(paramlist);
-  if (checksum.verifychecksum(paramlist, config.PAYTM_MERCHANT_KEY)) {
-    console.log("true");
-    res.render('response.ejs', {
-      'restdata': "true",
-      'paramlist': paramlist
-    });
-  } else {
-    console.log("false");
-    res.render('response.ejs', {
-      'restdata': "false",
-      'paramlist': paramlist
-    });
-  };
-});
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
