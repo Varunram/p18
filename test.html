@@ -1,0 +1,109 @@
+<html>
+
+<head>
+	<style>
+		@font-face {
+			font-family: 'Monoton';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Monoton'), local('Monoton-Regular'), url(http://themes.googleusercontent.com/static/fonts/monoton/v4/AKI-lyzyNHXByGHeOcds_w.woff) format('woff');
+		}
+
+		@font-face {
+			font-family: 'Iceland';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Iceland'), local('Iceland-Regular'), url(http://themes.googleusercontent.com/static/fonts/iceland/v3/F6LYTZLHrG9BNYXRjU7RSw.woff) format('woff');
+		}
+
+		@font-face {
+			font-family: 'Pacifico';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Pacifico Regular'), local('Pacifico-Regular'), url(http://themes.googleusercontent.com/static/fonts/pacifico/v5/yunJt0R8tCvMyj_V4xSjafesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+		}
+
+		@font-face {
+			font-family: 'Audiowide';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Audiowide'), local('Audiowide-Regular'), url(http://themes.googleusercontent.com/static/fonts/audiowide/v2/8XtYtNKEyyZh481XVWfVOj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+		}
+
+		@font-face {
+			font-family: 'Vampiro One';
+			font-style: normal;
+			font-weight: 400;
+			src: local('Vampiro One'), local('VampiroOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/vampiroone/v3/Ho2Xld8UbQyBA8XLxF1_NYbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+		}
+
+		body {
+			background-color: #222222;
+		}
+		/*neon effect*/
+
+		p {
+			text-align: center;
+			font-size: 7em;
+			margin: 20px 0 20px 0;
+		}
+
+		a {
+			text-decoration: none;
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			transition: all 0.5s;
+		}
+
+		.target > a {
+			color: #FFDD1B;
+			font-family: Audiowide;
+		}
+
+		.target > a:hover {
+			-webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+			-moz-animation: neon3 1.5s ease-in-out infinite alternate;
+			animation: neon3 1.5s ease-in-out infinite alternate;
+		}
+
+		p a:hover {
+			color: #ffffff;
+		}
+		/*glow for webkit-ket-frames*/
+		@-webkit-keyframes neon3 {
+			from {
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+			}
+			to {
+				text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+			}
+		}
+		@-moz-keyframes neon3 {
+			from {
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+			}
+			to {
+				text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+			}
+		}
+
+		@keyframes neon3 {
+			from {
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+			}
+			to {
+				text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<p class="target"><a href="">
+			PRODIGY 2018
+  </a></p>
+	</div>
+</body>
+
+</html>

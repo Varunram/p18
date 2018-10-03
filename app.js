@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var cons = require('consolidate');
 var config = require('./config/config');
 var checksum = require('./model/checksum');
+var http = require('http');
 
 var app = express();
 
@@ -50,6 +51,10 @@ app.get('/waterrocket', function(req, res) {
   res.render('waterrocket');
 });
 
+app.get('/analytics', function(req, res) {
+  res.render('analytics');
+});
+
 // Workshops
 app.get('/ansys', function(req, res) {
   res.render('ansys');
@@ -74,20 +79,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -99,4 +90,9 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app;
+app.set('port', process.env.PORT || 80);
+
+http.createServer(app).listen(app.get('port'),
+  function(){
+    console.log("Express server listening on port " + app.get('port'));
+});

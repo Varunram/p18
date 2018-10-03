@@ -1272,7 +1272,7 @@ body {
 }
 
 body {
-  background: #312450;
+  background: black;
 }
 
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {

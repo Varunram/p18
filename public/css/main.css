@@ -1681,7 +1681,7 @@ input::-moz-focus-inner {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.4;
+  opacity: 1;
   background: linear-gradient(to right, black 0%, black 20%, transparent 100%);
 }
 .s-home::before {
@@ -1692,7 +1692,7 @@ input::-moz-focus-inner {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.65;
+  opacity: 0.2;
   background-color: #000000;
 }
 
